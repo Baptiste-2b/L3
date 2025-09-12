@@ -1,0 +1,90 @@
+1. Les points dans un jeu
+
+Un jeu se gagne en marquant au moins 4 points avec 2 points d’écart.
+Le comptage se fait de façon particulière :
+
+0 point → “0” (ou “love” en anglais)
+
+1 point → 15
+
+2 points → 30
+
+3 points → 40
+
+4 points (si 2 d’avance) → Jeu
+
+👉 Exemple :
+
+40–30 → le joueur à 40 gagne le point → jeu.
+
+40–40 → égalité (deuce).
+
+2. L’égalité (deuce) et l’avantage
+
+À 40–40, on dit égalité.
+
+Le joueur qui marque le point suivant obtient “avantage”.
+
+Si le joueur à l’avantage gagne encore un point → jeu.
+
+Si l’autre joueur gagne le point → retour à égalité.
+
+3. Les jeux dans un set
+
+Un set se gagne en remportant 6 jeux avec 2 jeux d’écart (par ex. 6–4).
+
+Si les deux joueurs sont à 5–5 → il faut aller à 7–5.
+
+Si les deux joueurs arrivent à 6–6 → on joue un tie-break (sauf certaines compétitions comme Roland-Garros avant 2022 où il fallait 2 jeux d’écart même au-delà de 6–6).
+
+4. Le tie-break
+
+Le tie-break se joue généralement en 7 points avec 2 points d’écart.
+
+Le score se compte 1, 2, 3… (et non 15–30–40).
+
+Le vainqueur du tie-break gagne le set 7–6.
+
+5. Les sets dans un match
+
+Chez les hommes en Grand Chelem : meilleur des 5 sets (il faut en gagner 3).
+
+Chez les femmes et dans la plupart des tournois : meilleur des 3 sets (il faut en gagner 2).
+
+
+
+
+P1 0
+P2 0
+match = True
+
+tant que match non fini
+
+	choose P1 or P2 
+
+	P1 or P2 +1 
+	
+	si points P1 ou P2 >= 4 and | points P1 - P2 | >= 2
+	
+		jeu P1 ou P2 += 1
+		
+		si jeu P1 ou P2 >= 6 and | jeu P1 - P2 | >= 2
+		
+			match = False
+			return winner
+			
+		si jeu P1 et jeu P2 = 6
+			tie break = true
+			P1 = 0
+			P2 = 0
+			tant que tie break is true
+				
+				choose P1 or P2 
+
+				P1 or P2 +1 
+	
+				si points P1 ou P2 >= 7 and | points P1 - P2 | >= 2
+		
+
+
+
